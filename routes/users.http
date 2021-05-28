@@ -1,0 +1,35 @@
+### Install the VSCode extension "REST Client"
+### (https://marketplace.visualstudio.com/items?itemName=humao.rest-client)
+
+@baseUrl = http://localhost:4000
+
+### GET /users
+GET {{baseUrl}}/api/users
+
+### GET /api/users/:id
+GET {{baseUrl}}/api/users/0
+
+### GET /api/users/2000 (should not be found)
+GET {{baseUrl}}/api/users/2000
+
+### POST /api/users
+POST http://localhost:4000/api/users
+Content-Type: application/json
+
+{
+  "name": "Max Mustermann",
+  "age": 42,
+  "email": "maxmustermann1979@gmx.de"
+}
+
+### PATCH /api/users/1
+PATCH {{baseUrl}}/api/users/1
+Content-Type: application/json
+
+{
+  "name": "Jack Doe",
+  "email": "jack@doe.com"
+}
+
+### DELETE /api/users/1
+DELETE {{baseUrl}}/api/users/1
